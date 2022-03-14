@@ -59,11 +59,9 @@ void TSP::create_by_euc_2d(vector<pair<int,int>> &node_coord_section){
 }
 
 void TSP::create_deliveries(int k, int v){
-    for (int i=0; i<dimension; i++){
-        if (i <k)
-            deliveries.push_back(make_pair(2*(i+1), v));
-        else
-            deliveries.push_back(make_pair(0,0));
+    deliveries.resize(dimension, make_pair(0,0));
+    for (int i=0; i<k; i++){
+        if (2*(i+1) < dimension) deliveries[2*i+1] = make_pair(2*(i+1), v);
     }
 }
 
