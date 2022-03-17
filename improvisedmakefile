@@ -1,6 +1,6 @@
-g++ main.cpp ./TSP/TSP.cpp ./Solution/solution.cpp
+g++ main.cpp ./TSP/TSP.cpp ./Solution/solution.cpp ./LocalSearch/LocalSearch.cpp
 
 
 
 
-a <inputs/brazil58.txt
+a <inputs/gr17.txt

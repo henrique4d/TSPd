@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 #include "./TSP/TSP.h"
 #include "./Solution/Solution.h"
+#include "./LocalSearch/LocalSearch.h"
 using namespace std;
 
 int main (){
@@ -39,8 +40,10 @@ int main (){
         }
         if (value!="DISPLAY_DATA_SECTION" and cin >> k >> v);
         TSP instancia(dimension, edge_weight_type, edge_weight_format, edge_weight_section, k, v);
-        Solution A(Solution::greedyA,dimension, &instancia);
-        cout << A.get_value() << endl;
+        Solution A(Solution::greedyB, &instancia);
+        LocalSearch busca_local(&instancia);        
+        cout << busca_local.get_value() << endl;
+
     } 
     if (edge_weight_type == "EUC_2D"){
         cin >> trash_data;
@@ -54,8 +57,9 @@ int main (){
         }
         if (cin >> k >> v);
         TSP instancia(dimension, edge_weight_type, node_coord_section, k, v);
-        Solution A(Solution::greedyA, dimension, &instancia);
-        cout << A.get_value() << endl;
+        Solution A(Solution::greedyB, &instancia);
+        LocalSearch busca_local(&instancia);
+        cout << busca_local.get_value() << endl;
     }
     return 0;
 }
